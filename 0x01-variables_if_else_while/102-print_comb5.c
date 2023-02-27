@@ -11,9 +11,9 @@ int main(void)
 	int i;
 	int j;
 
-	for (i = 0;i < 100; i++)
+	for (i = 0; i < 100; i++)
 	{
-		for (j = i;j < 100; j++)
+		for (j = i; j < 100; j++)
 		{
 			if (i != j)
 			{
@@ -27,7 +27,6 @@ int main(void)
 				putchar(' ');
 				putchar('0' + n3);
 				putchar('0' + n4);
-			
 				if (i != 98 || j != 99)
 				{
 					putchar(',');
@@ -36,5 +35,6 @@ int main(void)
 			}
 		}
 	}
-
+	
+	return (0);
 }
