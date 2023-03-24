@@ -14,10 +14,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list list;
 	unsigned int i;
-	char *ptr;
+	char *ptr, *sep;
 
 	if (separator == NULL || *separator == 0)
-		return;
+		sep = " ";
+	else
+		sep = (char *) separator;
+
 	va_start(list, n);
 
 	if (n > 0)
@@ -29,7 +32,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (ptr == NULL)
 			ptr = "(nil)";
 
-		printf("%s%s", separator, ptr);
+		printf("%s%s", sep, ptr);
 	}
 
 	printf("\n");
