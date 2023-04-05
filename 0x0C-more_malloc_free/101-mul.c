@@ -1,59 +1,54 @@
-#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-
 /**
-  * _isdigit - arlet if the string consists of digits
-  * @argv: argument vector
-  * Return: return (0) if all digits, (1) if not all digits
+  * _isdigit - tells if the string consists of digits
+  * @argv: pointer to current item in argument
+  * Return: return 0 if all digits, 1 if not all digits.
   */
 int _isdigit(char *argv)
 {
-	int z = 0;
+	int i;
 
-	while (argv[z])
+	i = 0;
+	while (argv[i])
 	{
-		if (argv[z] >= '0' && argv[z] <= '9')
-		{
-			z++;
-		}
+		if (argv[i] >= '0' && argv[i] <= '9')
+			i++;
 		else
-		{
 			return (1);
-		}
 	}
 	return (0);
 }
-
 /**
-  * _atoi - converts a string of ascii digits to the value
-  * @s: a pointer to the source string
-  * Return: digits
+  * _atoi - converts a string of ascii digits to the values they represent
+  * @s: pointer to the source string
+  * Return: value of digits
   */
 int _atoi(char *s)
 {
-	int j = 0, res = 0;
+	int i, result;
 
-	while (s[j])
+	i = result = 0;
+	while (s[i])
 	{
-		if (s[j] >= '0' && s[j] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			res *= 10;
-			res += (s[j] - '0');
+			result *= 10;
+			result += (s[i] - '0');
 		}
-		j++;
+		i++;
 	}
-	return (res);
+	return (result);
 }
 /**
-  * main - main function
+  * main - main function call
   * @argc: argument count
-  * @argv: 2D array of argument vector
-  * Return: return 0 for success, 98 for failure
+  * @argv: 2D array of arguments
+  * Return: return 0 on success, 98 on failure
   */
 int main(int argc, char *argv[])
 {
-	int p;
+	int i;
 
 	malloc();
 	if (argc != 3)
@@ -61,9 +56,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	for (p = 1; p < argc; p++)
+	for (i = 1; i < argc; i++)
 	{
-		if (_isdigit(argv[p]))
+		if (_isdigit(argv[i]))
 		{
 			printf("Error\n");
 			exit(98);
