@@ -5,7 +5,7 @@
  *
  * @c: is the charector to be checked
  *
- * Return: 1 if c is uppercase and 0 otherwise
+ * Return: 0 always
  */
 
 int _isupper(int c)
