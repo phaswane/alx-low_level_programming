@@ -24,7 +24,7 @@ char *str_concat(char *s1, char *s2)
 
 	ptr = (char *) malloc((sizeof(char) * length) + 1);
 
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 	{
 		ptr = "";
 	}
@@ -39,8 +39,5 @@ char *str_concat(char *s1, char *s2)
 		ptr[j + s1_len] = s2[j];
 	}
 
-	ptr[length] = '\0';
-
 	return (ptr);
-
 }
