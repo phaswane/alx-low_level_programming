@@ -24,18 +24,30 @@ char *str_concat(char *s1, char *s2)
 
 	ptr = (char *) malloc((sizeof(char) * length) + 1);
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
 		ptr = "";
 	}
 
 	for (i = 0; i < s1_len; i++)
 	{
-		ptr[i] = s1[i];
+		if (s1 == NULL)
+		{
+			ptr = "";
+		}
+		else
+		{
+			ptr[i] = s1[i];
+		}
 	}
 
 	for (j = 0; j < s2_len; j++)
 	{
+		if (s2 == NULL)
+		{
+			ptr = "";
+		}
+
 		ptr[j + s1_len] = s2[j];
 	}
 
