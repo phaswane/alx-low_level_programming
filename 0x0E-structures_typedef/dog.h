@@ -2,19 +2,17 @@
 #define DOG_H
 
 /**
- * struct dog - the name of the structure data type
- * @name: name of the array of char data type
- * @age: name of a float variable
- * @owner: pointer to an array of char data type
+ * struct dog - structure stsores details about a dog
+ * @name: pet name
+ * @age: pet age
+ * @owner: pet owner name
  */
 
-struct dog{
+struct dog
+{
 	char *name;
 	float age;
 	char *owner;
 };
-
-void init_dog(struct dog *d, char *name, float age, char *owner);
-void print_dog(struct dog *d);
 
 #endif
