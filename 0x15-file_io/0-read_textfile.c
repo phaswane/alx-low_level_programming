@@ -1,3 +1,5 @@
+#include <unistd.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include "main.h"
 #include <stdlib.h>
